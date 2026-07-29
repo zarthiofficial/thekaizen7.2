@@ -340,14 +340,41 @@ button { font-family: inherit; cursor: pointer; }
 .highlight-card p { font-size: 13.5px; line-height: 1.55; color: #5C534D; margin: 0; }
 
 /* ===================== TRAVEL ===================== */
-.travel { background: var(--royal-blue); color: var(--ivory); }
+.travel { 
+  background: var(--royal-blue); 
+  color: var(--ivory); 
+  text-align: center;              /* NEW */
+  display: flex;                   /* NEW */
+  flex-direction: column;          /* NEW */
+  align-items: center;             /* NEW */
+}
+
 .travel .section-title { color: var(--ivory); }
-.travel__copy { font-size: 16px; line-height: 1.75; color: rgba(251,246,236,0.85); max-width: 680px; }
-.travel__hives { display: flex; gap: 12px; margin-top: 28px; }
+
+.travel__copy { 
+  font-size: 16px; 
+  line-height: 1.75; 
+  color: rgba(251,246,236,0.85); 
+  max-width: 680px; 
+  margin-left: auto;               /* NEW */
+  margin-right: auto;              /* NEW */
+}
+
+.travel__hives { 
+  display: flex; 
+  gap: 12px; 
+  margin-top: 28px; 
+  justify-content: center;          /* NEW: centers the pills within the flex row */
+  flex-wrap: wrap;                  /* NEW: optional, prevents overflow on small screens */
+}
+
 .travel__hive-pill {
-  padding: 8px 18px; border-radius: 999px;
+  padding: 8px 18px; 
+  border-radius: 999px;
   border: 1px solid rgba(233,204,130,0.4);
-  font-size: 13px; font-weight: 600; color: var(--gold-light);
+  font-size: 13px; 
+  font-weight: 600; 
+  color: var(--gold-light);
 }
 
 /* ===================== REGISTER ===================== */
