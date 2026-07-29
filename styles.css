@@ -287,7 +287,6 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes scrollCue { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
 
 /* ===================== ABOUT ===================== */
-/* ===================== ABOUT ===================== */
 .about { 
   background: var(--warm-white); 
   text-align: center;              /* NEW: centers inline content */
