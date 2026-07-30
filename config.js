@@ -18,7 +18,7 @@ window.KAIZEN_CONFIG = {
   city: "Bhopal",
   venueDisplay: "Venue — To Be Announced",
   ticketDisplay: "5 ZPL Points",
-  contactEmail: "brandcomms@zarthi.com",
+  contactEmail: "khwaish.dogra@zarthi.com",
 
   // Paste the Web App URL you get after deploying the Apps Script
   // (Deploy → New deployment → Web app). Replace the placeholder below.
