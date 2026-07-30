@@ -252,12 +252,13 @@
         <div class="form-field">
           <label for="AlcoholPreference">Alcohol Preference <span class="req">*</span></label>
           <div class="option-row">
-<input type="radio" name="alcoholPreference" value="No"><span>Whiskey</span>
-<input type="radio" name="alcoholPreference" value="No"><span>Vodka</span>
-<input type="radio" name="alcoholPreference" value="No"><span>Gin</span>
-<input type="radio" name="alcoholPreference" value="No"><span>Beer</span>
-<input type="radio" name="alcoholPreference" value="No"><span>I'll Prefer To Stay Sober</span>
+            <label class="option-pill"><input type="radio" name="alcoholPreference" value="Whiskey"><span>Whiskey</span></label>
+            <label class="option-pill"><input type="radio" name="alcoholPreference" value="Vodka"><span>Vodka</span></label>
+            <label class="option-pill"><input type="radio" name="alcoholPreference" value="Gin"><span>Gin</span></label>
+            <label class="option-pill"><input type="radio" name="alcoholPreference" value="Beer"><span>Beer</span></label>
+            <label class="option-pill"><input type="radio" name="alcoholPreference" value="Sober"><span>I'll Prefer To Stay Sober</span></label>
           </div>
+          <p class="field-error" role="alert"></p>
         </div>
 
         <div class="form-row">
@@ -267,6 +268,7 @@
               <label class="option-pill"><input type="radio" name="trainAssistance" value="Yes"><span>Yes, please</span></label>
               <label class="option-pill"><input type="radio" name="trainAssistance" value="No" checked><span>I'll manage</span></label>
             </div>
+            <p class="field-error" role="alert"></p>
           </div>
           <div class="form-field">
              <label for="stayAssistance">Stay Booking Assistance<span class="req">*</span></label>
@@ -274,16 +276,18 @@
               <label class="option-pill"><input type="radio" name="stayAssistance" value="Yes"><span>Yes, please</span></label>
               <label class="option-pill"><input type="radio" name="stayAssistance" value="No" checked><span>I'll manage</span></label>
             </div>
+            <p class="field-error" role="alert"></p>
           </div>
         </div>
 
         <div class="form-field">
-          <label for="travelPreference">Travel Boking Assistance<span class="req">*</span></label>
+          <label for="travelPreference">Travel Preference<span class="req">*</span></label>
           <select id="travelPreference" name="travelPreference">
             <option>Travelling with the group / common train</option>
             <option>Travelling on my own</option>
             <option>Undecided</option>
           </select>
+          <p class="field-error" role="alert"></p>
         </div>
 
         <div class="form-field">
