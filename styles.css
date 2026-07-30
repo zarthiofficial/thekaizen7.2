@@ -340,43 +340,52 @@ button { font-family: inherit; cursor: pointer; }
 .highlight-card p { font-size: 13.5px; line-height: 1.55; color: #5C534D; margin: 0; }
 
 /* ===================== TRAVEL ===================== */
-.travel { 
-  background: var(--royal-blue); 
-  color: var(--ivory); 
-  text-align: center;              /* NEW */
-  display: flex;                   /* NEW */
-  flex-direction: column;          /* NEW */
-  align-items: center;             /* NEW */
+.travel .section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.travel .section-title { color: var(--ivory); }
-
-.travel__copy { 
-  font-size: 16px; 
-  line-height: 1.75; 
-  color: rgba(251,246,236,0.85); 
-  max-width: 680px; 
-  margin-left: auto;               /* NEW */
-  margin-right: auto;              /* NEW */
+.travel-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.travel__hives { 
-  display: flex; 
-  gap: 12px; 
-  margin-top: 28px; 
-  justify-content: center;          /* NEW: centers the pills within the flex row */
-  flex-wrap: wrap;                  /* NEW: optional, prevents overflow on small screens */
+.travel-content {
+  display: none;
+  max-width: 680px;
+  width: 100%;
+  text-align: center;        /* CHANGED: was left, now center */
+  margin-left: auto;         /* NEW: centers the block itself */
+  margin-right: auto;        /* NEW */
 }
 
-.travel__hive-pill {
-  padding: 8px 18px; 
-  border-radius: 999px;
-  border: 1px solid rgba(233,204,130,0.4);
-  font-size: 13px; 
-  font-weight: 600; 
+.travel-content.active {
+  display: block;
+}
+
+.travel-subhead {
+  font-size: 15px;
+  font-weight: 700;
   color: var(--gold-light);
+  margin-top: 20px;
+  margin-bottom: 8px;
+  text-align: center;         /* NEW */
 }
 
+.travel-list {
+  margin: 16px auto;          /* CHANGED: auto centers the block */
+  padding-left: 0;            /* CHANGED: removes left indent since bullets look odd centered */
+  list-style-position: inside; /* NEW: keeps bullet markers close to centered text */
+  max-width: 560px;           /* NEW: keeps lines from stretching edge-to-edge, easier to read */
+}
+
+.travel-list li {
+  margin-bottom: 6px;         /* NEW: a little breathing room between centered lines */
+}
 /* ===================== REGISTER ===================== */
 .register {
   background: linear-gradient(180deg, var(--maroon-deep) 0%, var(--maroon) 100%);
