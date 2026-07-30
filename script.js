@@ -24,9 +24,6 @@
 
     var hasAnyUtm = incoming.source || incoming.medium || incoming.campaign || incoming.content;
 
-    // Only overwrite what's already stored if this visit actually carries
-    // UTM params — so a later direct visit (e.g. a bookmark) doesn't wipe
-    // out attribution captured on first arrival within the same session.
     if (hasAnyUtm) {
       var utm = {
         source: incoming.source || 'direct',
@@ -153,8 +150,6 @@
     var errorBanner = document.getElementById('form-error');
     var isSubmitting = false;
 
-    // Draft persistence: preserve entered data if a submission fails
-    // or the page is accidentally reloaded.
     var DRAFT_KEY = 'kaizen_form_draft_v1';
 
     function saveDraft() {
@@ -202,6 +197,7 @@
       }
     }
 
+    // All fields are mandatory except "suggestions" (Event Suggestions).
     function validate(data) {
       var errors = {};
       if (!data.fullName || !data.fullName.trim()) errors.fullName = 'Please enter your full name.';
@@ -214,6 +210,19 @@
         errors.officialEmail = 'Work email is required.';
       } else if (!emailPattern.test(email)) {
         errors.officialEmail = 'Enter a valid email address.';
+      }
+
+      if (!data.alcoholPreference || !data.alcoholPreference.trim()) {
+        errors.alcoholPreference = 'Please select your alcohol preference.';
+      }
+      if (!data.trainAssistance || !data.trainAssistance.trim()) {
+        errors.trainAssistance = 'Please let us know if you need train booking assistance.';
+      }
+      if (!data.stayAssistance || !data.stayAssistance.trim()) {
+        errors.stayAssistance = 'Please let us know if you need stay booking assistance.';
+      }
+      if (!data.travelPreference || !data.travelPreference.trim()) {
+        errors.travelPreference = 'Please select your travel preference.';
       }
 
       if (!data.zplConsent) errors.zplConsent = 'Please confirm the ZPL Points ticket deduction.';
@@ -236,7 +245,7 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (isSubmitting) return; // hard stop on double-click / double submit
+      if (isSubmitting) return;
 
       clearFieldErrors();
       errorBanner.hidden = true;
@@ -277,10 +286,6 @@
 
       setLoading(true);
 
-      // text/plain avoids a CORS preflight (OPTIONS) request, which
-      // Apps Script Web Apps do not handle — keeping this a "simple
-      // request" is what makes cross-origin GitHub Pages → Apps Script
-      // submissions work reliably.
       fetch(CONFIG.submissionEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -342,7 +347,6 @@
 
     document.querySelectorAll('[data-track]').forEach(function (el) {
       el.addEventListener('click', function () {
-        // Placeholder hook for GA4/GTM — push to dataLayer if present.
         if (window.dataLayer) {
           window.dataLayer.push({ event: 'kaizen_interaction', action: el.getAttribute('data-track') });
         }
