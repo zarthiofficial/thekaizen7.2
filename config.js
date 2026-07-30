@@ -22,5 +22,5 @@ window.KAIZEN_CONFIG = {
 
   // Paste the Web App URL you get after deploying the Apps Script
   // (Deploy → New deployment → Web app). Replace the placeholder below.
-  submissionEndpoint: "https://script.google.com/macros/s/AKfycbyQ5aXKSvcrFsWJuhp7iEQ_wVsdKH5JJ26Gukx383ZrlZPt4-YjIVZcwaSZdr_oM_nC/exec",
+  submissionEndpoint: "https://script.google.com/macros/s/AKfycbyhW6fxdlVja3mdv21V5C3qnT-Qbu9kh-M2Vey0RpuxiEvhw4M9XFKXNpp91fRWQb1X/exec",
 };
