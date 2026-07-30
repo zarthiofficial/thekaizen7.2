@@ -50,7 +50,22 @@ var COLUMNS = [
 ];
 
 // Fields that MUST be present and non-empty for a submission to be valid.
-var REQUIRED_FIELDS = ['fullName', 'employeeCode', 'hive', 'officialEmail', 'zplConsent'];
+// All fields are mandatory except "suggestions" (Event Suggestions).
+// Field names here match the actual camelCase keys sent in the payload
+// from the frontend JS — the previous names (AlcoholPreference,
+// TrainBookingAssistance...) did not match, which meant every submission
+// was failing validation regardless of what the user entered.
+var REQUIRED_FIELDS = [
+  'fullName',
+  'employeeCode',
+  'hive',
+  'officialEmail',
+  'alcoholPreference',
+  'trainAssistance',
+  'stayAssistance',
+  'travelPreference',
+  'zplConsent'
+];
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
