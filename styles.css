@@ -370,11 +370,28 @@ button { font-family: inherit; cursor: pointer; }
   flex-wrap: wrap;
 }
 
+.travel-tab {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(233,204,130,0.4);
+  background: transparent;
+  color: var(--ivory);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.travel-tab.active {
+  background: var(--gold);
+  color: var(--royal-blue);
+  border-color: var(--gold);
+}
+
 .travel-content {
   display: none;
   max-width: 680px;
   width: 100%;
-  text-align: left;           /* left-aligned content */
+  text-align: left;
   margin-top: 24px;
 }
 
@@ -392,13 +409,14 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .travel-list {
+  list-style: none;
   margin: 16px 0;
-  padding-left: 20px;
-  list-style-position: outside;
+  padding-left: 0;
 }
 
 .travel-list li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  padding-left: 0;
 }
 /* ===================== REGISTER ===================== */
 .register {
